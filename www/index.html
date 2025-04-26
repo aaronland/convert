@@ -1,0 +1,43 @@
+<html>
+    <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Convert tool</title>
+	<script src="javascript/sfomuseum.golang.wasm.bundle.js"></script>	
+	<script src="javascript/convert.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/convert.css" />
+    </head>
+    <body>
+	<form>
+	    <div>
+		<span id="feedback"></span>
+	    </div>	    
+	    <div>
+		<span id="result"></span>
+	    </div>
+	    <div>
+		<label from="value">Value</label>
+		<input type="text" name="value" id="value" />
+	    </div>
+	    <div>
+		<label from="quantity">Quantity</label>		
+		<select name="quantity" id="quantity" >
+		    <option value="" />
+		</select>
+	    </div>
+	    <div>
+		<label from="from">From</label>		
+		<select name="from" id="from">
+		    <option value="" />		    
+		</select>
+	    </div>
+	    <div>
+		<label from="to">To</label>		
+		<select name="to" id="to">
+		    <option value="" />
+		</select>	    
+	    </div>
+	    <button type="submit" id="submit" class="btn btn-primary" disabled="disabled">Convert</button>
+	</form>
+    </body>
+</html>

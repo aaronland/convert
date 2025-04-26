@@ -1,0 +1,9 @@
+body {
+	font-family: sans-serif;
+	margin:1rem;
+}
+
+#result {
+	font-size: 3rem;
+	font-weight: 700;
+}

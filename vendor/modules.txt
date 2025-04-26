@@ -1,0 +1,9 @@
+# github.com/Knetic/govaluate v3.0.0+incompatible
+## explicit
+github.com/Knetic/govaluate
+# github.com/bcicen/bfstree v1.0.0
+## explicit; go 1.18
+github.com/bcicen/bfstree
+# github.com/bcicen/go-units v1.0.5
+## explicit; go 1.18
+github.com/bcicen/go-units
