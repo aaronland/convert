@@ -7,3 +7,11 @@ body {
 	font-size: 3rem;
 	font-weight: 700;
 }
+
+#feedback {
+	font-style: italic;
+}
+
+#submit {
+	float:right;
+}

@@ -2,6 +2,7 @@ window.addEventListener("load", function load(event){
 
     var units_map;
 
+    var feedback_el = document.getElementById("feedback");        
     var result_el = document.getElementById("result");    
     var value_el = document.getElementById("value");
     var quantity_el = document.getElementById("quantity");
@@ -25,6 +26,7 @@ window.addEventListener("load", function load(event){
 	   
 	    quantity_el.onchange = function(e){
 
+		feedback_el.innerHTML = "";
 		result_el.innerHTML = "";
 		
 		from_el.innerHTML = "";
@@ -70,6 +72,7 @@ window.addEventListener("load", function load(event){
 
 		var onchange_func = function(e){
 
+		    feedback_el.innerHTML = "";		    
 		    result_el.innerHTML = "";
 		    
 		    const v = value_el.value;
@@ -77,16 +80,19 @@ window.addEventListener("load", function load(event){
 		    const to_v = to_el.value;
 
 		    if (! v){
+			feedback_el.innerText = "Missing value.";
 			submit_el.setAttribute("disabled", "disabled");		    			
 			return false;
 		    }
 		    
 		    if ((! from_v) || (! to_v)){
+			feedback_el.innerText = "One or more missing units.";			
 			submit_el.setAttribute("disabled", "disabled");		    			
 			return false;
 		    }
 
 		    if (from_v == to_v){
+			feedback_el.innerText = "Units are the same.";						
 			submit_el.setAttribute("disabled", "disabled");		    			
 			return false;
 		    }
@@ -101,21 +107,27 @@ window.addEventListener("load", function load(event){
 
 	    submit_el.onclick = function(e){
 
+		feedback_el.innerHTML = "";
+		result_el.innerHTML = "";		
+		
 		const v = value_el.value;
 		const from_v = from_el.value;
 		const to_v = to_el.value;
 
 		if (! v){
+		    feedback_el.innerText = "Missing value.";
 		    submit_el.setAttribute("disabled", "disabled");		    			
 		    return false;
 		}
 		
 		if ((! from_v) || (! to_v)){
+		    feedback_el.innerText = "One or more missing units.";
 		    submit_el.setAttribute("disabled", "disabled");		    			
 		    return false;
 		}
 		
 		if (from_v == to_v){
+		    feedback_el.innerText = "Units are the same.";
 		    submit_el.setAttribute("disabled", "disabled");		    			
 		    return false;
 		}
@@ -124,8 +136,9 @@ window.addEventListener("load", function load(event){
 
 		convert_units(v, from_v, to_v).then((rsp) => {
 		    const new_v = JSON.parse(rsp);
-		    result_el.innerText = new_v;
+		    result_el.innerText = new_v.toFixed(2);
 		}).catch((err) => {
+		    feedback_el.innerText = "Failed to convert units, " + err;
 		    console.error("Failed to convert units", err);
 		});
 		
@@ -137,7 +150,9 @@ window.addEventListener("load", function load(event){
 	})
 	    
     }).catch((err) => {
+	feedback_el.innerText = "Failed to load convert functions, " + err;
 	console.error("Failed to retrieve convert func", err);
     });
 
 });
+
