@@ -9,8 +9,10 @@ window.addEventListener("load", function load(event){
     var from_el = document.getElementById("from");
     var to_el = document.getElementById("to");            
     var submit_el = document.getElementById("submit");
+
+    const wasm_uri = location.pathname + "wasm/convert.wasm";
     
-    sfomuseum.golang.wasm.fetch("/wasm/convert.wasm").then(rsp => {
+    sfomuseum.golang.wasm.fetch(wasm_uri).then(rsp => {
 
 	convert_units_map().then((rsp) => {
 
@@ -60,12 +62,12 @@ window.addEventListener("load", function load(event){
 		for (var i=0; i < count; i++){
 
 		    var from_item = document.createElement("option");
-		    from_item.setAttribute("value", units[i].Symbol);
+		    from_item.setAttribute("value", units[i].Name);
 		    from_item.appendChild(document.createTextNode(units[i].Name));
 		    from_el.appendChild(from_item);
 
 		    var to_item = document.createElement("option");
-		    to_item.setAttribute("value", units[i].Symbol);
+		    to_item.setAttribute("value", units[i].Name);
 		    to_item.appendChild(document.createTextNode(units[i].Name));
 		    to_el.appendChild(to_item);		    
 		}
