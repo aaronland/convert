@@ -134,7 +134,8 @@ window.addEventListener("load", function load(event){
 		    
 		    return false;
 		};
-		
+
+		value_el.onchange = onchange_func;
 		from_el.onchange = onchange_func;
 		to_el.onchange = onchange_func;		
 	    };

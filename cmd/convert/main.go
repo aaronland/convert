@@ -3,8 +3,8 @@ package main
 import (
 	"log/slog"
 	"syscall/js"
-	
-	"github.com/aaronland/www-convert"	
+
+	"github.com/aaronland/convert"
 )
 
 func main() {
@@ -14,9 +14,9 @@ func main() {
 
 	convert_func := convert.ConvertUnitsFunc()
 	defer convert_func.Release()
-	
+
 	js.Global().Set("convert_units_map", units_func)
-	js.Global().Set("convert_units", convert_func)	
+	js.Global().Set("convert_units", convert_func)
 
 	c := make(chan struct{}, 0)
 

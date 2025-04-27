@@ -1,4 +1,4 @@
-module github.com/aaronland/www-convert
+module github.com/aaronland/convert
 
 go 1.24.0
 
