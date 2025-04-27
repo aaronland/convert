@@ -3,6 +3,12 @@ body {
 	margin:1rem;
 }
 
+footer {
+	margin-top: 2rem;
+	display:flex;
+	justify-content: right;
+}
+
 #result {
 	font-size: 3rem;
 	font-weight: 700;
@@ -14,4 +20,8 @@ body {
 
 #submit {
 	float:right;
+}
+
+#purge {
+	font-size:small;
 }

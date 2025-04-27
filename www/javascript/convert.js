@@ -7,8 +7,15 @@ window.addEventListener("load", function load(event){
     var value_el = document.getElementById("value");
     var quantity_el = document.getElementById("quantity");
     var from_el = document.getElementById("from");
-    var to_el = document.getElementById("to");            
+    var to_el = document.getElementById("to");
+    
+    var purge_el = document.getElementById("purge");
 
+    purge_el.onclick = function(){
+	convert.offline.purge_with_confirmation();
+	return false;
+    };
+    
     const wasm_uri = location.pathname + "wasm/convert.wasm";
     
     sfomuseum.golang.wasm.fetch(wasm_uri).then(rsp => {
