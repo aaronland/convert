@@ -25,7 +25,7 @@ convert.offline = (function(){
 		};
 		
 		navigator.serviceWorker.register(sw_uri, sw_args).then((registration) => {
-		    console.log("sw registered");
+		    console.log("sw registered", sw_args);
 		    registration.update();
 		    resolve();
 		}).catch((err) => {

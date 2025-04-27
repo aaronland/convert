@@ -13,9 +13,11 @@ window.addEventListener("load", function load(event){
 
     if (offline){
 
-	convert.offline.init().then((rsp) => {
+	const scope = location.pathname;
+	
+	convert.offline.init(scope).then((rsp) => {
 
-	    console.debug("Offline service workers registered.");
+	    console.debug("Offline service workers registered for scope " + scope);
 	    
 	    var purge_el = document.createElement("span");
 	    purge_el.setAttribute("id", "purge");

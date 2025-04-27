@@ -1,4 +1,4 @@
-const cache_name = 'convert-v0.0.1';
+const cache_name = 'convert-v0.0.2';
 
 const app_files = [
     // HTML

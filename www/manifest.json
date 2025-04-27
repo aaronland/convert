@@ -1,8 +1,8 @@
 {
     "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-    "name": "Fingerprint",
-    "short_name": "fingerprint",
-    "description": "Fingerprint",
+    "name": "Convert",
+    "short_name": "convert",
+    "description": "Convert units and measurements",
     "icons": [],
     "start_url": ".",
     "display": "fullscreen",
