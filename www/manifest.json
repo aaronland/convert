@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/web-manifest-combined.json",
     "name": "Convert",
-    "short_name": "convert",
+    "short_name": "Convert",
     "description": "Convert units and measurements",
     "icons": [],
     "start_url": ".",

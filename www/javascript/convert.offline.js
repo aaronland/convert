@@ -18,16 +18,30 @@ convert.offline = (function(){
 		    return
 		}
 		
-		var sw_uri = "sw.js";
+		var sw_uri = scope + "sw.js";
 		
 		var sw_args = {
 		    scope: scope,
 		};
+
+		console.log("register service worker", sw_uri, sw_args);
 		
 		navigator.serviceWorker.register(sw_uri, sw_args).then((registration) => {
-		    console.log("sw registered", sw_args);
-		    registration.update();
+
+		    if (navigator.onLine){
+
+			console.debug("update sw registration");
+			
+			registration.update().then((rsp) => {
+			    console.log("sw registration updated");
+			}).catch((err) => {
+			    console.error("failed to update sw registration", err);
+			});
+		    }
+		    
+		    console.log("sw registered", sw_args);		    
 		    resolve();
+		    
 		}).catch((err) => {
 		    console.error("Failed to register service worker", err);
 		    reject(err);

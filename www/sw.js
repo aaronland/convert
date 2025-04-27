@@ -1,4 +1,6 @@
-const cache_name = 'convert-v0.0.2';
+const cache_name = 'convert-v0.0.4';
+
+console.log("Hello convert/sw.js");
 
 const app_files = [
     // HTML
@@ -27,12 +29,13 @@ const app_files = [
 
 self.addEventListener("install", (e) => {
 
-    console.log("SW installed", cache_name);
+    console.log("SW install event", cache_name);
 
     e.waitUntil((async () => {
 	const cache = await caches.open(cache_name);
-	// console.log('[Service Worker] Caching all: app shell and content');
+	console.log("SW cache files", cache_name, app_files);
 	await cache.addAll(app_files);
+	console.log("SW cache files added", cache_name);
     })());
 });
 
