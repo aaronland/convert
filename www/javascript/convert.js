@@ -8,13 +8,38 @@ window.addEventListener("load", function load(event){
     var quantity_el = document.getElementById("quantity");
     var from_el = document.getElementById("from");
     var to_el = document.getElementById("to");
-    
-    var purge_el = document.getElementById("purge");
 
-    purge_el.onclick = function(){
-	convert.offline.purge_with_confirmation();
-	return false;
-    };
+    const offline = document.body.hasAttribute("offline");
+
+    if (offline){
+
+	convert.offline.init().then((rsp) => {
+
+	    console.debug("Offline service workers registered.");
+	    
+	    var purge_el = document.createElement("span");
+	    purge_el.setAttribute("id", "purge");
+	    purge_el.appendChild(document.createTextNode("purge offline cache"));
+	    
+	    purge_el.onclick = function(){
+		
+		convert.offline.purge_with_confirmation().then((rsp) => {
+		    feedback_el.innerText = "Offline cache has been removed.";
+		}).catch((err) => {
+		    feedback_el.innerText = "Failed to purge offline cache, " + err;
+		});
+		
+		return false;
+	    };
+	    
+	    var footer = document.getElementById("footer");	
+	    footer.appendChild(purge_el);
+	    
+	}).catch((err) => {
+	    feedback_el.innerText = "Failed to initialize offline mode, " + err;
+	});
+	
+    }
     
     const wasm_uri = location.pathname + "wasm/convert.wasm";
     
