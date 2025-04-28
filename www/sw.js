@@ -1,4 +1,4 @@
-const cache_name = 'convert-v0.0.4';
+const cache_name = 'convert-v0.0.5';
 
 console.log("Hello convert/sw.js");
 
