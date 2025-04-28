@@ -36,7 +36,7 @@ $> fileserver -root www/
 If you need or want to rebuild the `convert.wasm` binary the easiest thing to do is run the handy `wasmjs` Makefile target, like this:
 
 ```
-$> make wasmjs && make debug
+$> make wasmjs
 GOOS=js GOARCH=wasm \
 		go build -mod vendor -ldflags="-s -w" \
 		-o www/wasm/convert.wasm \
