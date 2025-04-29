@@ -22,7 +22,7 @@ The `bcicen/go-units` package is used for most conversions but I've also added c
 
 ## Demo
 
-I tried making a "github pages" demo but the WASM binary is being delivered as Base64 (?) encoded gibberish and I have not figured out a workaround. In the meantime you can test the application by point any old web-server tool at the [www](www) directory.
+I tried making a "github pages" demo but the WASM binary is being delivered as Base64 (?) encoded gibberish and I have not figured out a workaround. In the meantime you can test the application by pointing any old web-server tool at the [www](www) directory.
 
 I like to use the [aaronland/go-http-fileserver](https://github.com/aaronland/go-http-fileserver) tool but that's most because I wrote it but anything should work. For example:
 
