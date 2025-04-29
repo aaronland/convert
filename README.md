@@ -14,11 +14,11 @@ In addition to wanting a simple offline application I also wanted to continue in
 
 ## Offline mode
 
-This _should_ work in offline mode. It _seems_ to work for me but ServiceWorkers and offline-anything in browsers is fussy and brittle so if you tell me it doesn't work for you I won't be overly surpised.
+This _should_ work in offline mode. It _seems_ to work for me but ServiceWorkers and offline-anything in browsers can be fussy and brittle so if you tell me it doesn't work for you I won't be overly surpised.
 
 ## Units
 
-The `bcicen/go-units` package for most conversions but add custom definitions for standard US/North American cooking units like cups, teaspoons and tablespoons.
+The `bcicen/go-units` package is used for most conversions but I've also added custom definitions for standard US/North American cooking units like cups, teaspoons and tablespoons.
 
 ## Demo
 
