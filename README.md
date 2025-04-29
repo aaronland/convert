@@ -10,7 +10,7 @@ I wanted a simple web application for converting measurements which is designed 
 
 Under the hood it uses a WebAssembly (WASM) binary which wraps the [bcicen/go-units](https://github.com/bcicen/go-units) Go package. This is _not_ the most efficient way to do things.
 
-In addition to want a simple offline application I also wanted to continue investigating the use of WASM binaries for providing functionality in (offline) web applications. Go produces large binaries, certainly compared to the size of equivalent functionality written in JavaScript. For example, the `convert.wasm` binary used by this application is 4MB. I can live with that, at least for now.
+In addition to wanting a simple offline application I also wanted to continue investigating the use of WASM binaries for providing functionality in (offline) web applications. Go produces large binaries, certainly compared to the size of equivalent functionality written in JavaScript. For example, the `convert.wasm` binary used by this application is 4MB. I can live with that, at least for now.
 
 ## Offline mode
 
