@@ -7,6 +7,9 @@ footer {
 	margin-top: 2rem;
 	display:flex;
 	justify-content: right;
+	position: fixed;
+	right: 1.25rem;
+	bottom: 1rem;
 }
 
 #result {
@@ -24,4 +27,5 @@ footer {
 
 #purge {
 	font-size:small;
+	color:#666;
 }

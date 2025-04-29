@@ -1,4 +1,4 @@
-const cache_name = 'convert-v0.0.5';
+const cache_name = 'convert-v0.0.6';
 
 console.log("Hello convert/sw.js");
 
@@ -11,16 +11,13 @@ const app_files = [
     "./css/convert.css",
     
     // Javascript dependencies
-    
     "./javascript/sfomuseum.golang.wasm.bundle.js",
     
     // Javascript application
-
     "./javascript/convert.js",    
     "./javascript/convert.offline.js",
 
     // WASM
-
     "./wasm/convert.wasm",
     
     // Javascript service workers
